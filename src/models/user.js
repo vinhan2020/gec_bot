@@ -7,6 +7,18 @@ const User = mongoose.Schema({
         required: true,
         unique: true
     },
+    userName: {
+        type: String,
+        default: ''
+    },
+    referredBy: {
+        type: String,
+        default: ''
+    },
+    peopleInvited: {
+        type: Number,
+        default: 0
+    },
     twitterName: {
         type: String,
         default: ''
@@ -14,10 +26,6 @@ const User = mongoose.Schema({
     referralCode: {
         type: String,
         default: ''
-    },
-    pointRef: {
-        type: Number,
-        default: 0
     },
     walletAddress: {
         type: String,
@@ -30,7 +38,11 @@ const User = mongoose.Schema({
                 default: ''
             }
         }
-    ]
+    ],
+    point: {
+        type: Number,
+        default: 0
+    }
 }, {
     timestamps: true,
     versionKey: false

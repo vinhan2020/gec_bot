@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-// const route = require('./routes')
+const route = require('./routes')
 const db = require('./config/db')
 const cors = require('cors')
 const port = 8080
@@ -15,7 +15,7 @@ app.use(express.urlencoded({
     extended: true
 }))
 app.use(express.json())
-// route(app)
+route(app)
 
 // error handling middleware
 app.use((err, res, req, next) => {
